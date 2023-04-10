@@ -1,0 +1,5 @@
+data/
+notebooks/
+venv/
+__pycache__/
+.pytest_cache/
