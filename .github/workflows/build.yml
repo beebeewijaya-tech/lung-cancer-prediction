@@ -1,0 +1,26 @@
+name: build
+run-name: ${{ github.actor }}
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types:
+      - opened
+    branches:
+      - master
+env:
+  DOCKER_USER: ${{secrets.DOCKER_USER}}
+  DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v2
+      - name: login docker
+        run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+      - name: build docker image
+        run: make build
+      - name: push docker image
+        run: make push
