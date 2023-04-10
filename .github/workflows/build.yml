@@ -1,9 +1,6 @@
 name: build
 run-name: ${{ github.actor }}
 on:
-  push:
-    branches:
-      - master
   pull_request:
     types:
       - opened

@@ -1,0 +1,31 @@
+name: deploy
+run-name: ${{ github.actor }}
+on:
+  push:
+    branches:
+      - master
+env:
+  SA_EMAIL: ${{secrets.SA_EMAIL}}
+  RUN_PROJECT: ${{secrets.RUN_PROJECT}}
+  DOCKER_USER: ${{secrets.DOCKER_USER}}
+  DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+  VM_INSTANCE: ${{secrets.VM_INSTANCE}}
+  DOCKER_TOKEN: ${{secrets.DOCKER_TOKEN}}
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v2
+
+      - id: "auth"
+        uses: "google-github-actions/auth@v1"
+        with:
+          credentials_json: ${{secrets.GOOGLE_APP_KEY}}
+
+      - name: "Set up Cloud SDK"
+        uses: "google-github-actions/setup-gcloud@v1"
+
+      - name: "SSH Into VM"
+        run: |
+          gcloud compute ssh --zone "asia-southeast2-a" $VM_INSTANCE --project $RUN_PROJECT
