@@ -2,6 +2,18 @@
 
 Predicting a data from person, that will spit out classification is it lung cancer or not.
 
+## Data Preprocessing and Feature Engineering
+
+![alt text](./docs/step-0.png)
+
+### Modelling
+
+![alt text](./docs/step-1.png)
+
+### API flow - Predict
+
+![alt text](./docs/step-2.png)
+
 ## Project installaation
 
 ```

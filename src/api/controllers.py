@@ -6,7 +6,6 @@ dt_sc = pickle.load(open("models/decision_tree_scaler.pkl", "rb"))
 
 
 def predicting_lung_cancer(body: Person):
-    print(body)
     payload = [[body.age, body.alcohol_consuming,
                 body.allergy, body.chest_pain, body.wheezing]]
 
