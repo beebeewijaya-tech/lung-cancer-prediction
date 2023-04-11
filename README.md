@@ -6,13 +6,43 @@ Predicting a data from person, that will spit out classification is it lung canc
 
 ![alt text](./docs/step-0.png)
 
-### Modelling
+## Modelling
 
 ![alt text](./docs/step-1.png)
 
-### API flow - Predict
+## API flow - Predict
 
 ![alt text](./docs/step-2.png)
+
+## API Body Request & Response
+
+- **BASE URL**: http://34.101.79.86:8000
+
+- **ENDPOINT**: `/v1/predict`
+
+- **Method:**: `POST`
+
+BODY Request
+
+```
+{
+  "age": 62,
+  "alcohol_consuming": false,
+  "wheezing": false,
+  "allergy": true,
+  "chest_pain": true
+}
+```
+
+Response
+
+```
+Status Code: 200
+{
+	"message": "Successfully predict the lung cancer person",
+	"is_lung_cancer": true
+}
+```
 
 ## Project installaation
 
@@ -46,4 +76,10 @@ test:
 	pytest
 ```
 
-You can just `make install-dev` & `make-run-dev`
+To run locally you can just run `make install-dev` & `make-run-dev`
+
+## How to re-train the model
+
+Go to `notebooks/04_modelling.ipynb` change some of the parameters and run all of the process from the notebook.
+
+Afterwards see the result at `models/`
