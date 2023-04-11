@@ -28,3 +28,8 @@ model_uid                             model_name                                
 7f6fd84c-3124-4c57-9af7-88c2ea9e0f7f  <class 'sklearn.tree._classes.DecisionTreeClassifier'>        0.0389993  2023-04-10 14:42:49  0.652174        0.75  smote          [[58  4]
                                                                                                                                                                           [16 30]]
  
+model_uid                             model_name                                                training_time  training_date          recall    f1_score  data_config    confusion_matrix
+------------------------------------  ------------------------------------------------------  ---------------  -------------------  --------  ----------  -------------  ------------------
+8c2442c9-0bbb-4545-be05-ddb1cd1ba6b2  <class 'sklearn.tree._classes.DecisionTreeClassifier'>         0.048702  2023-04-11 11:19:17  0.652174        0.75  smote          [[58  4]
+                                                                                                                                                                          [16 30]]
+ 
